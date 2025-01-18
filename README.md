@@ -12,7 +12,7 @@
 - [Katkıda Bulunma](#katkıda-bulunma)
 
 ## Proje Genel Bakış
-Bu proje, ihracat verilerini analiz ederek iki temel makine öğrenmesi problemi üzerinde çalışmaktadır:
+Bu projede ATEZ YAZILIM TEKNOLOJİLERİ A.Ş'nin sağlamış olduğu gümrük/ihracat verileri kullanılmıştır. Desteklerinden ötürü kendilerine teşekkür ediyorum. Projede iki farklı learning algoritmasını kullanarak bolca pratik yapmak istedim bu yüzden hem <i>Supervised Learning<i/> hem de <i>Unsupervised Learning<i/> problemleri inceledim.
 
 ### 1. Maliyet Tahmini (Supervised Learning)
 - **Amaç**: İhracat işlemlerinin toplam maliyetinin tahmin edilmesi
