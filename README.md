@@ -1,15 +1,25 @@
 # İhracat Maliyet Analizi ve Anomali Tespiti Projesi
 
 ## İçindekiler
-- [Proje Genel Bakış](#proje-genel-bakış)
-- [Özellikler](#özellikler)
-- [Gereksinimler](#gereksinimler)
-- [Proje Yapısı](#proje-yapısı)
-- [Veri Ön İşleme](#veri-ön-işleme)
-- [Modeller](#modeller)
-- [Sonuçlar](#sonuçlar)
-- [Kurulum ve Kullanım](#kurulum-ve-kullanım)
-- [Katkıda Bulunma](#katkıda-bulunma)
+- [1.Proje Genel Bakış](#proje-genel-bakış)
+- [2.Özellikler](#özellikler)
+- [3.Gereksinimler](#gereksinimler)
+- [4.Proje Yapısı](#proje-yapısı)
+- [5.Veri Ön İşleme](#veri-ön-işleme)
+- [6.Modeller](#modeller)
+    - 6.1. Denetimli Öğrenme (Regresyon)
+        - 5.1.1. Lineer Regresyon
+        - 5.1.2. Lasso Regresyonu
+        - 5.1.3. KNN Regresyonu
+        - 5.1.4. Random Forest Regresyonu
+        - 5.1.5. XGBoost Regresyonu
+    - 6.2. Denetimsiz Öğrenme (Anomali Tespiti)
+        - 5.2.1. K-Means Kümeleme
+        - 5.2.2. Hiyerarşik Kümeleme
+        - 5.2.3. Isolation Forest
+- [7.Sonuçlar](#sonuçlar)
+- [8.Kurulum ve Kullanım](#kurulum-ve-kullanım)
+- [9.Katkıda Bulunma](#katkıda-bulunma)
 
 ## Proje Genel Bakış
 Bu projede ATEZ YAZILIM TEKNOLOJİLERİ A.Ş'nin sağlamış olduğu gümrük/ihracat verileri kullanılmıştır. Desteklerinden ötürü kendilerine teşekkür ediyorum. Projede iki farklı learning algoritmasını kullanarak bolca pratik yapmak istedim bu yüzden hem <i>Supervised Learning<i/> hem de <i>Unsupervised Learning<i/> problemleri inceledim.
