@@ -311,9 +311,39 @@ Bu bölümde, projede kullanılan modeller detaylı bir şekilde açıklanmaktad
 
 İhracat maliyetini tahmin etmek için aşağıdaki regresyon modelleri kullanılmıştır:
 
-#### 6.1.1. Lineer Regresyon
+#### 6.1.1 Lineer Regresyon
 
-`train_evaluate_linearRegression()` fonksiyonu kullanılarak lineer regresyon modeli eğitilmiş ve değerlendirilmiştir.
+`train_evaluate_linearRegression()` fonksiyonu ile Lineer Regresyon modeli eğitilmiş ve değerlendirilmiştir. Bu fonksiyon, verilen eğitim ve test verilerini kullanarak bir Lineer Regresyon modeli oluşturur ve modelin performansını çeşitli metriklerle değerlendirir.
+
+**Fonksiyonun Yapısı:**
+
+1. **Model Oluşturma:** `LinearRegression()` sınıfından bir model nesnesi oluşturulur.
+2. **Model Eğitimi:** `fit()` metodu kullanılarak model, eğitim verileri ile eğitilir.
+3. **Tahmin Yapma:** `predict()` metodu kullanılarak test verileri üzerinde tahminler yapılır.
+4. **Performans Değerlendirmesi:** `mean_squared_error()`, `r2_score()` gibi metrikler kullanılarak modelin performansı değerlendirilir.
+
+
+**Sonuçlar:**
+
+Lineer Regresyon modelinin performans metrikleri aşağıdaki gibidir:
+
+-   MSE: 0.0000
+-   RMSE: 0.0000
+-   R^2: 1.0000
+
+**Overfitting:**
+
+Elde edilen sonuçlar, modelin aşırı uyum (overfitting) yaptığını göstermektedir. MSE ve RMSE değerlerinin 0, R^2 değerinin ise 1 olması, modelin eğitim verilerini mükemmel bir şekilde öğrendiğini, ancak test verileri üzerinde genelleme yapamadığını gösterir. Bu durum, modelin eğitim verilerindeki gürültüyü ve rastgele dalgalanmaları da öğrenmesi nedeniyle gerçek dünya verilerine uygulanamaz hale gelmesine neden olur.
+
+**Overfitting Nedenleri:**
+
+-   **Veri Setinin Küçük Olması:**  Küçük veri setleri, modelin genelleme yeteneğini azaltarak overfitting'e yol açabilir.
+-   **Çok Sayıda Değişken:**  Çok sayıda değişken, modelin karmaşıklığını artırarak overfitting riskini yükseltir.
+-   **Modelin Karmaşıklığı:** Lineer Regresyon gibi basit bir model bile, veri setine göre çok karmaşık olabilir ve overfitting yapabilir.
+
+**Lasso Regresyonu:**
+
+Overfitting problemini çözmek için, bir sonraki adımda Lasso Regresyonu kullanılacaktır. Lasso Regresyonu, L1 düzenlileştirme (regularization) kullanarak modelin karmaşıklığını azaltır ve overfitting'i önlemeye yardımcı olur. L1 düzenlileştirme, modeldeki katsayıların mutlak değerlerinin toplamını cezalandırarak bazı katsayıları sıfıra eşitler ve böylece modelde özellik seçimi yapar. Bu sayede, model daha sade ve genelleme yeteneği daha yüksek hale gelir.
 
 #### 6.1.2. Lasso Regresyonu
 
