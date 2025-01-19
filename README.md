@@ -81,12 +81,12 @@ Desteklerinden ötürü kendilerine teşekkür ediyorum. Projede bolca pratik ya
 ### Teknik Detaylar
 
 - **Veri Boyutu**:
-    - Satır sayısı: [Veri setindeki toplam kayıt sayısı]
-    - Değişken sayısı: [Toplam özellik sayısı]
+    - Satır sayısı: 586
+    - Değişken sayısı: 67
 
 - **Performans Metrikleri**:
-    - **Maliyet Tahmini**: RMSE, R² ve MAE
-    - **Anomali Tespiti**: Silhouette skoru ve küme kalite metrikleri
+    - **Maliyet Tahmini - Supervied**: RMSE, R² ve MAE (Regresyon)
+    - **Anomali Tespiti - Unsupervised**: Silhouette skoru ve küme kalite metrikleri (Clustering)
 
 - **Kullanılan Teknolojiler**:
     - Python 3.x
