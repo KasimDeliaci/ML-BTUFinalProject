@@ -270,9 +270,9 @@ Bu fonksiyon, verilen DataFrame'deki yüksek korelasyona sahip özellikleri beli
 
 **Fonksiyonun Yapısı:**
 
-1. **Hedef Değişkenle Korelasyon:** İlk olarak, her bir özellik ile hedef değişken arasındaki korelasyon hesaplanır. Korelasyonun mutlak değeri belirli bir eşik değerin (örneğin, 0.05) altında olan özellikler, hedef değişkenle düşük korelasyona sahip oldukları için silinir.
+1. **Hedef Değişkenle Korelasyon:** İlk olarak, her bir özellik ile hedef değişken arasındaki korelasyon hesaplanır. En düşük korelasyona sahip 3 değişken silinir.
 
-2. **Özellikler Arası Korelasyon:** Daha sonra, özellikler arasındaki korelasyon matrisi hesaplanır. Korelasyonun mutlak değeri belirli bir eşik değerin (örneğin, 0.80) üzerinde olan özellik çiftlerinden biri silinir. Bu işlem, yüksek korelasyona sahip ve benzer bilgileri taşıyan özelliklerin modelden çıkarılmasını sağlar.
+2. **Özellikler Arası Korelasyon:** Daha sonra, özellikler arasındaki korelasyon matrisi hesaplanır. Korelasyonun mutlak değeri belirli bir eşik değerin  0.90) üzerinde olan özellik çiftlerinden biri silinir. Bu işlem, yüksek korelasyona sahip ve benzer bilgileri taşıyan özelliklerin modelden çıkarılmasını sağlar.
 
 **Sonuç:**
 
