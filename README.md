@@ -191,9 +191,29 @@ Veri setindeki eksik veriler, aşağıdaki adımlar izlenerek ele alınmıştır
 -   Kalan oranları işbilgine dayanarak ve araştırmalarım sonucu anlamlı olabileceğini fark ettiğim için bıraktım, mesela bazı ürünlerde devlet teşviki gibi nedenlerden dolayı bazı kalemlerin giderleri sıfırlanabiliyor.
 -   Anlamsız ve yüksek sayıda sıfır içeren sütunlar da silindikten sonra veri setinde 33 sütun kalmıştır.
 
-### 5.2. Aykırı Değerlerin Tespiti ve Düzeltilmesi
+### 5.2 Aykırı Değerlerin Tespiti ve Düzeltilmesi
 
-`handle_outliers()` fonksiyonu kullanılarak aykırı değerler tespit edilmiş ve sınırlandırma (capping) yöntemi ile düzeltilmiştir.
+Aykırı değerler, veri setinde diğer gözlemlerden önemli ölçüde farklı olan değerlerdir ve analiz sonuçlarını olumsuz etkileyebilirler. Bu projede, aykırı değerleri tespit etmek ve düzeltmek için `handle_outliers()` fonksiyonu kullanılmıştır.
+
+**`handle_outliers()` Fonksiyonu:**
+
+Bu fonksiyon, verilen bir DataFrame'deki sayısal sütunlarda aykırı değerleri tespit eder ve sınırlandırma (capping) yöntemi ile işler. 
+
+**Fonksiyonun Yapısı:**
+
+1. **IQR (Interquartile Range) Hesaplama:**  İlk olarak, her bir sayısal sütun için IQR değeri hesaplanır. IQR, verinin %75'lik ve %25'lik çeyrekleri arasındaki farktır ve verinin dağılımı hakkında bilgi verir.
+
+2. **Alt ve Üst Eşik Değerlerin Belirlenmesi:** IQR değerine dayanarak, aykırı değerleri belirlemek için alt ve üst eşik değerleri hesaplanır. Genellikle, alt eşik değeri Q1 - 1.5 \* IQR, üst eşik değeri ise Q3 + 1.5 \* IQR olarak belirlenir.
+
+3. **Sınırlandırma (Capping):**  Alt eşik değerinin altında kalan değerler, alt eşik değeri ile; üst eşik değerinin üstünde kalan değerler ise üst eşik değeri ile sınırlandırılır. Bu sayede, aykırı değerlerin etkisi azaltılırken, veri setindeki bilgi kaybı da minimize edilir.
+
+**Sınırlandırma Tercih Edilmesinin Nedeni:**
+
+Bu projede, veri setinin boyutu nispeten küçük olduğundan, aykırı değerleri silmek yerine sınırlandırma yöntemi tercih edilmiştir. Sınırlandırma, aykırı değerlerin etkisini azaltırken veri setindeki bilgi kaybını önlemeye yardımcı olur.
+
+**Sonuç:**
+
+`handle_outliers()` fonksiyonu sayesinde, aykırı değerlerin olumsuz etkileri azaltılarak daha güvenilir ve doğru modeller elde edilmesi hedeflenmiştir.
 
 ### 5.3. Kategorik Değişkenlerin Kodlanması
 
