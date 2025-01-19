@@ -24,7 +24,11 @@
 
 ## 1. Proje Genel Bakış
 
-Bu projede ATEZ YAZILIM TEKNOLOJİLERİ A.Ş'nin sağlamış olduğu gümrük/ihracat verileri kullanılmıştır. Desteklerinden ötürü kendilerine teşekkür ediyorum. Projede iki farklı learning algoritmasını kullanarak bolca pratik yapmak istedim bu yüzden hem *Supervised Learning* hem de *Unsupervised Learning* problemleri inceledim.
+Bu projede kullanılan veri seti, ATEZ YAZILIM TEKNOLOJİLERİ A.Ş.'nin sağlamış olduğu ham gümrük/ihracat verilerinden oluşturulmuştur. Veriler, başlangıçta XML formatında olup, her bir dosya farklı bir ihracat işlemine ait bilgileri içermektedir. Bu karmaşık ve yapılandırılmamış verileri analiz etmek için, pandas'ın read_xml() fonksiyonu katmanlı ve iç içe geçmiş yapıları okuyamadığı için csv dosyası oluşturmak için önce kendi parser fonksiyonumu oluşturarak her bir dosyayı parse edip ardından pandas kütüphanesindeki read_xml() fonksiyonunu kullanabildim. Her bir dosyası okuyup oluşturduğum csv dosyasına satır olarak kaydettim ve file_name değişkeni ile hangi dosya olduğunu tuttum.
+
+Bu  veri işleme süreci, ham XML verilerinin makine öğrenmesi algoritmaları tarafından kullanılabilir hale getirilmesini sağlamıştır. Proje, bu veriler üzerinde uygulanan analizler ve elde edilen sonuçlar ile ihracat maliyetlerinin tahmin edilmesi ve anormalliklerin tespit edilmesi konularında değerli bilgiler sunmaktadır.
+
+Desteklerinden ötürü kendilerine teşekkür ediyorum. Projede bolca pratik yapmak istedim bu yüzden hem *Supervised Learning* hem de *Unsupervised Learning* problemleri inceledim.
 
 ### 1.1. Maliyet Tahmini (Supervised Learning)
 
