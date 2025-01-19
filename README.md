@@ -504,9 +504,26 @@ Projede kullanılan tüm modeller (Lineer Regresyon, Lasso Regresyonu, KNN, Rand
 
 ---
 
-### 6.2. Denetimsiz (Unsupervised) Öğrenme (Anomali Tespiti)
+### 6.2 Denetimsiz (Unsupervised) Öğrenme (Anomali Tespiti)
 
-Anormal veri noktalarını tespit etmek için aşağıdaki modeller kullanılmıştır:
+Anormal veri noktalarını tespit etmek, veri setindeki beklenmedik veya olağandışı desenleri belirlemeyi amaçlar. Bu anormallikler, hatalı veri girişleri, dolandırıcılık girişimleri veya süreçteki verimsizlikler gibi çeşitli sorunları işaret edebilir. Bu projede, anormal veri noktalarını tespit etmek için K-Means Kümeleme, Hiyerarşik Kümeleme ve Isolation Forest gibi denetimsiz öğrenme modelleri kullanılmıştır.
+
+**Problem:**
+
+İhracat verilerindeki anormallikleri tespit ederek, potansiyel sorunları veya iyileştirme fırsatlarını belirlemek.
+
+**Yeni Ölçeklendirme:**
+
+Denetimsiz öğrenme modellerinin çoğu, verilerin ölçeklendirilmesinden etkilenir. Bu nedenle, `scale_features_unsupervised()` fonksiyonu kullanılarak tüm özellikler `StandardScaler()` ile standartlaştırılmıştır. Bu fonksiyon, verilen bir DataFrame'deki belirtilen özellikleri standartlaştırır. Standartlaştırma, her bir özelliğin ortalamasını 0, standart sapmasını ise 1 olacak şekilde dönüştürür. Bu işlem, özelliklerin aynı ölçeğe getirilmesini ve modelin tüm özelliklere eşit ağırlık vermesini sağlar. Eski veri setimizde label olarak kullandığımız "Toplam_Maaliyet" değişkeni ayıklanarak scale edilmişti burda onu da eklemiş olduk çünkü denetimsiz öğrenmede labellanmış data yok.
+
+**Neden Ölçeklendirme?**
+
+-   **Uzaklık Bazlı Algoritmalar:** K-Means ve Hiyerarşik Kümeleme gibi uzaklık bazlı algoritmalar, farklı ölçeklerdeki özelliklerden olumsuz etkilenebilir. Standartlaştırma, bu algoritmaların performansını artırabilir.
+-   **Veri Görselleştirme:**  PCA (Temel Bileşen Analizi) gibi boyut indirgeme teknikleri, ölçeklendirilmiş verilerle daha iyi çalışır.
+
+**Sonuç:**
+
+Özelliklerin standartlaştırılması, denetimsiz öğrenme modellerinin daha doğru ve güvenilir sonuçlar üretmesine yardımcı olur. Bu sayede, ihracat verilerindeki anormallikler daha etkili bir şekilde tespit edilebilir.
 
 #### 6.2.1. K-Means Kümeleme
 
