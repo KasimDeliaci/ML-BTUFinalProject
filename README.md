@@ -544,7 +544,7 @@ K-Means kümeleme modelinin performans metriği ve optimum küme sayısı aşağ
 -   Optimal Number of Clusters (k): 7
 -   Silhouette Score: 0.20683424692694305
 
-**Elbow Grafiği:**
+**Elbow ve PCA Grafiği:**
 
 | ![Elbow Grafiği](https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/kmeans-elbow.png) |
 |:-------------------------------------------------------------------------------------------:|
@@ -560,9 +560,39 @@ Elbow grafiği incelenerek optimum küme sayısının 7 olduğu belirlenmiş ve 
 
 K-Means kümeleme modeli, ihracat verilerindeki anormallikleri tespit etmek için kullanılabilir. Modelin performansı, silhouette skoru ve elbow grafiği incelenerek değerlendirilebilir.  Ancak, daha yüksek bir silhouette skoru elde etmek için farklı kümeleme algoritmaları veya parametreleri denenebilir.
 
-#### 6.2.2. Hiyerarşik Kümeleme
+### 6.2.2 Hiyerarşik Kümeleme
 
-`train_evaluate_HierarchicalKMeans()` fonksiyonu kullanılarak hiyerarşik kümeleme modeli eğitilmiş ve değerlendirilmiştir.
+`train_evaluate_HierarchicalKMeans()` fonksiyonu kullanılarak hiyerarşik kümeleme modeli eğitilmiş ve değerlendirilmiştir. Bu fonksiyon, verilen veri setini kullanarak bir hiyerarşik kümeleme modeli oluşturur ve modelin performansını silhouette skoru ile değerlendirir. Hiyerarşik kümeleme, veri noktalarını benzerliklerine göre hiyerarşik bir yapıda kümelere ayırır.
+
+**Fonksiyonun Yapısı:**
+
+1.  **Optimum Küme Sayısının Belirlenmesi:** K-Means algoritması ve Elbow yöntemi kullanılarak optimum küme sayısı belirlenir. Bu yöntemde, farklı küme sayıları için K-Means modelinin within-cluster sum of squares (WCSS) değeri hesaplanır ve bu değerlerin değişimine göre optimum küme sayısı seçilir.
+2.  **Model Oluşturma:** `AgglomerativeClustering()` sınıfından bir model nesnesi oluşturulur. `n_clusters` parametresi, küme sayısını ve `linkage` parametresi kümelerin nasıl birleştirileceğini belirler.
+3.  **Model Eğitimi:** `fit_predict()` metodu kullanılarak model eğitilir ve veri noktaları kümelere atanır.
+4.  **Performans Değerlendirmesi:** `silhouette_score()` fonksiyonu kullanılarak modelin performansı değerlendirilir. Silhouette skoru, kümelerin ne kadar iyi ayrıldığını ve veri noktalarının kendi kümelerine ne kadar iyi ait olduğunu ölçer.
+
+**Sonuçlar:**
+
+Hiyerarşik kümeleme modelinin performans metriği ve optimum küme sayısı aşağıdaki gibidir:
+
+-   Optimal Number of Clusters (k): 4
+-   Silhouette Score: 0.25116389416176405
+
+**Değerlendirme:**
+
+Elbow yöntemi ile optimum küme sayısının 4 olduğu belirlenmiş ve hiyerarşik kümeleme modeli bu küme sayısı ile eğitilmiştir. 0.2512'lik Silhouette skoru, kümelerin orta düzeyde ayrıldığını ve veri noktalarının kendi kümelerine orta düzeyde ait olduğunu gösterir. Bu skor, K-Means kümeleme modelinden elde edilen silhouette skorundan biraz daha yüksektir, bu da hiyerarşik kümelemenin bu veri seti için biraz daha iyi performans gösterebileceğini düşündürmektedir.
+
+**Elbow ve PCA Grafiği:**
+
+| ![Elbow Grafiği](https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/kmeans-elbow.png) |
+|:-------------------------------------------------------------------------------------------:|
+
+| ![Image 1](https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/kmeans-pca1.png) | 
+|:-------------------------------------------------------------------------------------------:|
+
+**Sonuç:**
+
+Hiyerarşik kümeleme modeli, ihracat verilerindeki anormallikleri tespit etmek için kullanılabilir. Modelin performansı, silhouette skoru incelenerek değerlendirilebilir. Ancak, daha yüksek bir silhouette skoru elde etmek için farklı kümeleme algoritmaları veya parametreleri denenebilir.
 
 #### 6.2.3. Isolation Forest
 
