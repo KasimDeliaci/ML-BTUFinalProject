@@ -285,9 +285,23 @@ Aşağıda, `correlation_heatmap()` fonksiyonu ile oluşturulan ısı haritası 
 | ![Korelasyon Haritası](https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/corrheatmap.png) |
 |:-------------------------------------------------------------------------------------------:|
 
-### 5.6. Özellik Ölçeklendirme
+### 5.6 Özellik Ölçeklendirme
 
-`StandardScaler()` kullanılarak özellikler standartlaştırılmıştır.
+Özellik ölçeklendirme, farklı ölçeklere sahip sayısal özelliklerin aynı ölçeğe getirilmesi işlemidir. Bu, birçok makine öğrenmesi algoritmasının performansını artırmak için önemli bir adımdır. Çünkü farklı ölçeklerdeki özellikler, modelin bazı özelliklere diğerlerinden daha fazla ağırlık vermesine neden olabilir. Bu projede, özellik ölçeklendirme için `StandardScaler()` kullanılmıştır.
+
+**`StandardScaler()`**
+
+Bu fonksiyon, her bir özelliğin ortalamasını 0, standart sapmasını ise 1 olacak şekilde standartlaştırır. Bu işlem, özelliklerin aynı ölçeğe getirilmesini ve modelin tüm özelliklere eşit ağırlık vermesini sağlar.
+
+**Neden Standartlaştırma?**
+
+-   **Gradyan inişli algoritmalar:** Standartlaştırma, gradyan inişli algoritmaların daha hızlı ve daha kararlı bir şekilde yakınsamasına yardımcı olabilir.
+-   **Uzaklık bazlı algoritmalar:** KNN ve K-Means gibi uzaklık bazlı algoritmalar, farklı ölçeklerdeki özelliklerden olumsuz etkilenebilir. Standartlaştırma, bu algoritmaların performansını artırabilir. Özellikle KNN algoritması, değişkenlerin ölçeklerine duyarlıdır ve standartlaştırma bu algoritmanın daha doğru sonuçlar üretmesine yardımcı olur.
+-   **Düzenlileştirme (Regularization):** Lasso ve Ridge gibi düzenlileştirme yöntemleri, standartlaştırılmış verilerle daha iyi çalışır.
+
+**Sonuç**
+
+`StandardScaler()` ile özelliklerin standartlaştırılması, modelin performansını artırmak, eğitim süresini kısaltmak ve daha doğru sonuçlar elde etmek için önemli bir adımdır. Bu işlem, özellikle uzaklık bazlı algoritmaların kullanıldığı durumlarda modelin daha doğru ve güvenilir sonuçlar üretmesini sağlar.
 
 ## 6. Modeller
 
