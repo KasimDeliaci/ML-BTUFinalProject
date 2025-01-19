@@ -99,7 +99,7 @@ Desteklerinden ötürü kendilerine teşekkür ediyorum. Projede bolca pratik ya
 
 Bu projede aşağıdaki özellikler bulunmaktadır:
 
-- **Veri Temizleme:** Eksik verilerin işlenmesi, aykırı değerlerin tespiti ve düzeltilmesi.
+- **Veri Temizleme:** Eksik verilerin işlenmesi, aykırı değerlerin tespiti ve düzeltilmesi işbilgisine dayalı sıfırların analiz edilmesi.
 - **Özellik Mühendisliği:** Yeni ve bilgilendirici özellikler oluşturulması.
 - **Model Eğitimi:** Farklı makine öğrenmesi modellerinin eğitilmesi ve karşılaştırılması.
 - **Anomali Tespiti:** Anormal veri noktalarının tespiti ve analizi.
