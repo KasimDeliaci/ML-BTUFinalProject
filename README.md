@@ -282,7 +282,7 @@ Korelasyon analizi ve özellik silme işlemleri sonucunda, modelde gereksiz yere
 
 Aşağıda, `correlation_heatmap()` fonksiyonu ile oluşturulan ısı haritası görülmektedir.
 
-| ![Image](https://github.com/user-attachments/assets/06a7bcf2-88fb-4201-b6b7-e70d958d2d60) |
+| ![Korelasyon Haritası](https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/corrheatmap.png) |
 |:-------------------------------------------------------------------------------------------:|
 
 ### 5.6. Özellik Ölçeklendirme
