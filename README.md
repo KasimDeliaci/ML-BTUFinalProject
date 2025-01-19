@@ -215,9 +215,28 @@ Bu projede, veri setinin boyutu nispeten küçük olduğundan, aykırı değerle
 
 `handle_outliers()` fonksiyonu sayesinde, aykırı değerlerin olumsuz etkileri azaltılarak daha güvenilir ve doğru modeller elde edilmesi hedeflenmiştir.
 
-### 5.3. Kategorik Değişkenlerin Kodlanması
+### 5.3 Kategorik Değişkenlerin Kodlanması
 
-`target_encode()` fonksiyonu kullanılarak kategorik değişkenler hedef değişkene göre ortalama değerleri ile kodlanmıştır.
+Makine öğrenmesi algoritmalarının çoğu sayısal verilerle çalışır. Bu nedenle, kategorik değişkenleri modellemede kullanabilmek için sayısal değerlere dönüştürmek gerekir. Bu projede, kategorik değişkenleri kodlamak için **hedef değişkene göre ortalama kodlama (target encoding)** yöntemi kullanılmıştır. Bu yöntem, `target_encode()` fonksiyonu ile uygulanmıştır.
+
+**`target_encode()` Fonksiyonu:**
+
+Bu fonksiyon, kategorik değişkenleri hedef değişkenin ortalama değerlerine göre dönüştürür. 
+
+**Fonksiyonun Yapısı:**
+
+1. Her bir kategorik değişken için, hedef değişkenin her bir kategorideki ortalama değeri hesaplanır.
+2. Kategorik değişkenin her bir değeri, karşılık gelen ortalama değer ile değiştirilir.
+
+**Target Encoding Tercih Edilmesinin Nedenleri:**
+
+- **Yüksek Kardinalite:** Veri setindeki bazı kategorik değişkenlerin kardinalitesi (benzersiz değer sayısı) yüksektir. One-Hot Encoding gibi yöntemler, yüksek kardinaliteli değişkenlerde çok sayıda yeni sütun oluşturarak modelin karmaşıklığını ve boyutunu artırabilir. Target encoding, bu sorunu önleyerek değişkenleri tek bir sütunla temsil eder. One-hot encoding denediğimde 70 yeni sütun ekleniyordu, bu karmaşıklığı azaltmak için target encoding kullandım.
+- **Bilgi Kaybını Önleme:** Target encoding, kategorik değişkenler ile hedef değişken arasındaki ilişkiyi koruyarak bilgi kaybını önler.
+- **Model Performansını Artırma:** Target encoding, modelin kategorik değişkenlerdeki bilgileri daha etkili bir şekilde kullanmasını sağlayarak tahmin performansını artırabilir.
+
+**Sonuç:**
+
+`target_encode()` fonksiyonu ile kategorik değişkenler sayısal değerlere dönüştürülerek, makine öğrenmesi modellerinde kullanılabilir hale getirilmiştir. Bu yöntem, yüksek kardinaliteli değişkenlerde bilgi kaybını önleyerek ve model performansını artırarak daha doğru ve etkili modeller elde edilmesine yardımcı olur.
 
 ### 5.4. Korelasyon Analizi
 
