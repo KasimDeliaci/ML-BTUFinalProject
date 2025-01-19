@@ -167,11 +167,11 @@ Veri setindeki eksik veriler, aşağıdaki adımlar izlenerek ele alınmıştır
 
 1. **Eksik Veri Oranı Yüksek Sütunların Silinmesi:**
 
-   - `delete_columns_with_high_missing_ratio()` fonksiyonu kullanılarak eksik veri oranı %40'ın üzerinde olan sütunlar veri setinden silinmiştir. Bu fonksiyon, her sütundaki eksik veri oranını hesaplar ve belirlenen eşik değerini aşan sütunları siler.
+   - `delete_columns_with_high_missing_ratio()` fonksiyonu kullanılarak eksik veri oranı %40'ın üzerinde olan sütunlar veri setinden silinmiştir. Bu fonksiyon, her sütundaki eksik veri oranını hesaplar ve belirlenen eşik değerini aşan sütunları siler. Bunun sonucunda 11 sütun veri setinden silinmiştir.
 
 2. **Kategorik Değişkenlerdeki Eksik Verilerin Mod ile Doldurulması:**
 
-   - `fillna()` fonksiyonu kullanılarak `Navlun_miktarinin_dovizi`, `Toplam_sigorta_dovizi` ve `Sigorta_miktarinin_dovizi` sütunlarındaki eksik veriler, o sütunun en sık görülen değeri (mod) ile doldurulmuştur. 
+   - `fillna()` fonksiyonu kullanılarak `Navlun_miktarinin_dovizi`, `Toplam_sigorta_dovizi` ve `Sigorta_miktarinin_dovizi` sütunlarındaki eksik veriler, o sütunun en sık görülen değeri (mod) ile doldurulmuştur. Bu sütundaki eksik veri oranı az olduğu için ve kategorik değişken oldukları için modu ile doldurulması uygun görülmüştür.
 
 3. **Gereksiz Sütunların Silinmesi:**
 
@@ -179,14 +179,16 @@ Veri setindeki eksik veriler, aşağıdaki adımlar izlenerek ele alınmıştır
 
 **Eksik Veri Analizi Sonuçları:**
 
--   Başlangıçta veri setinde 27 özellik bulunmaktadır.
--   Yukarıdaki işlemler sonucunda 7 özellik silinmiş, 3 özellikteki eksik veriler doldurulmuş ve 2 özellik silinmiştir.
--   Sonuç olarak, veri setinde 15 özellik kalmıştır ve hiçbirinde eksik veri bulunmamaktadır.
+-   Başlangıçta veri setinde 67 özellik bulunmaktadır.
+-   Eksik veriler sonucunda 11 özellik silinmiş, 3 özellikteki eksik veriler doldurulmuş ve 2 özellik katkısız olduğu için silinmiştir.
+-   Sonuç olarak, veri setinde 54 özellik kalmıştır ve hiçbirinde eksik veri bulunmamaktadır.
 
 **Sıfır Değer Analizi ve Sütun Silinmesi:**
+-   Bu noktada veri setindeki bazı sütunların tamamının sıfırlardan oluştuğunu fark ettiğim için onları ayrıca incelemek istedim.
 
 -   `check_zero_ratio()` fonksiyonu ile veri setindeki sıfır değerlerinin oranı analiz edilmiştir. Bu fonksiyon, her sütundaki sıfır değerlerinin oranını hesaplar.
 -   Sıfır oranı %63'ün üzerinde olan 5 özellik (`Ihracat_fatura_tutari`, `Esya_bedeli`, `Toplam_esya_bedeli`, `Toplam_navlun`, `Toplam_sigorta_bedeli`) `drop()` fonksiyonu ile veri setinden silinmiştir.
+-   Kalan oranları işbilgine dayanarak ve araştırmalarım sonucu anlamlı olabileceğini fark ettiğim için bıraktım, mesela bazı ürünlerde devlet teşviki gibi nedenlerden dolayı bazı kalemlerin giderleri sıfırlanabiliyor.
 
 ### 5.2. Aykırı Değerlerin Tespiti ve Düzeltilmesi
 
