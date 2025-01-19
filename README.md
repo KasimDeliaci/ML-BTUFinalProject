@@ -30,6 +30,18 @@ Bu  veri işleme süreci, ham XML verilerinin makine öğrenmesi algoritmaları 
 
 Desteklerinden ötürü kendilerine teşekkür ediyorum. Projede bolca pratik yapmak istedim bu yüzden hem *Supervised Learning* hem de *Unsupervised Learning* problemleri inceledim.
 
+|**Sütun Adı**|**Veri Tipi**|**Açıklama**|
+|:---|:---|:---|
+|`Gonderici_ulke_kodu`|Kategorik|Gönderici firmanın ülke kodu|
+|`Gonderici_sehir`|Kategorik|Gönderici firmanın şehir ismi|
+|`Gonderici_posta_kodu`|Kategorik|Gönderici firmanın posta kodu|
+|`Alici_ulke_kodu`|Kategorik|Alıcı firmanın ülke kodu|
+|`Alici_sehir`|Kategorik|Alıcı firmanın şehir ismi|
+|...|...|...|
+|`Sigorta_miktarinin_dovizi`|Kategorik|Sigorta miktarının para birimi|
+|`Toplam_sigorta_bedeli`|Sayısal|Toplam sigorta bedeli|
+|`Toplam_sigorta_dovizi`|Kategorik|Toplam sigorta bedelinin para birimi|
+
 ### 1.1. Maliyet Tahmini (Supervised Learning)
 
 - **Amaç**: İhracat işlemlerinin toplam maliyetini, çeşitli faktörleri göz önünde bulundurarak doğru bir şekilde tahmin etmek. Bu, ihracatçılara işlem maliyetleri konusunda daha fazla görünürlük ve kontrol sağlayacaktır.
