@@ -238,11 +238,54 @@ Bu fonksiyon, kategorik değişkenleri hedef değişkenin ortalama değerlerine 
 
 `target_encode()` fonksiyonu ile kategorik değişkenler sayısal değerlere dönüştürülerek, makine öğrenmesi modellerinde kullanılabilir hale getirilmiştir. Bu yöntem, yüksek kardinaliteli değişkenlerde bilgi kaybını önleyerek ve model performansını artırarak daha doğru ve etkili modeller elde edilmesine yardımcı olur.
 
-### 5.4. Korelasyon Analizi
+### 5.4 Değişken Mühendisliği
 
-`correlation_heatmap()` ve `drop_correlated_features()` fonksiyonları kullanılarak yüksek korelasyona sahip özellikler veri setinden çıkarılmıştır.
+Mevcut değişkenlerden yeni değişkenler türetilerek modelin performansını artırmak ve veriye yeni bilgiler eklemek hedeflenir. Bu projede aşağıdaki yeni değişkenler oluşturulmuştur:
 
-### 5.5. Özellik Ölçeklendirme
+- **`Toplam_Maliyet`**: `Yurt_ici_harcama` ve `Yurt_disi_harcama` değişkenlerinin toplamı alınarak oluşturulmuştur. Bu değişken, bir ihracat işleminin toplam maliyetini temsil eder.
+
+- **`Paket_Basina_Maliyet`**:  `Toplam_Maliyet` değişkeninin `Kap_adedi` değişkenine bölünmesiyle elde edilmiştir. Bu değişken, her bir kap için ortalama maliyeti gösterir.
+
+- **`Paket_Basina_Agirlik`**: `Net_agirlik` değişkeninin `Kap_adedi` değişkenine bölünmesiyle elde edilmiştir. Bu değişken, her bir kaptaki ortalama ağırlığı temsil eder.
+
+- **`Agirlik_Yogunlugu`**:  `Brut_agirlik` değişkeninin `Kap_adedi` değişkenine bölünmesiyle elde edilmiştir. Bu değişken, her bir kap için brüt ağırlığın yoğunluğunu gösterir.
+
+- **`Nakliye_Orani`**: `Toplam_navlun` değişkeninin `Toplam_Maliyet` değişkenine bölünmesiyle elde edilmiştir. Bu değişken, toplam maliyet içindeki nakliye maliyetlerinin oranını temsil eder.
+
+- **`Sigorta_Orani`**: `Toplam_sigorta_bedeli` değişkeninin `Toplam_Maliyet` değişkenine bölünmesiyle elde edilmiştir. Bu değişken, toplam maliyet içindeki sigorta maliyetlerinin oranını temsil eder.
+
+Bu yeni değişkenler, modelin ihracat maliyetlerini daha iyi anlamasına ve daha doğru tahminler yapmasına yardımcı olabilir.
+
+### 5.5 Korelasyon Analizi
+
+Değişkenler arasındaki korelasyon, bir değişkendeki değişimin diğer değişkendeki değişimi nasıl etkilediğini gösterir. Yüksek korelasyona sahip değişkenler, modelde benzer bilgileri taşıdıkları için gereksiz yere karmaşıklığa neden olabilirler. Bu nedenle, bu projede yüksek korelasyona sahip özellikleri belirlemek ve veri setinden çıkarmak için korelasyon analizi yapılmıştır. Bu analiz, `correlation_heatmap()` ve `drop_correlated_features()` fonksiyonları kullanılarak gerçekleştirilmiştir.
+
+**`correlation_heatmap()` Fonksiyonu:**
+
+Bu fonksiyon, verilen DataFrame'deki değişkenler arasındaki korelasyonu hesaplar ve bir ısı haritası (heatmap) olarak görselleştirir. Isı haritası, değişkenler arasındaki korelasyonu renklerle göstererek, yüksek pozitif korelasyonu kırmızı, yüksek negatif korelasyonu mavi ve düşük korelasyonu ise beyaz tonlarıyla ifade eder.
+
+**`drop_correlated_features()` Fonksiyonu:**
+
+Bu fonksiyon, verilen DataFrame'deki yüksek korelasyona sahip özellikleri belirleyerek siler. Fonksiyon, hem hedef değişkenle düşük korelasyona sahip özellikleri hem de birbirleriyle yüksek korelasyona sahip özellikleri siler. Bu işlem, modelin gereksiz bilgilerden arındırılarak daha sade ve etkili hale getirilmesini sağlar.
+
+**Fonksiyonun Yapısı:**
+
+1. **Hedef Değişkenle Korelasyon:** İlk olarak, her bir özellik ile hedef değişken arasındaki korelasyon hesaplanır. Korelasyonun mutlak değeri belirli bir eşik değerin (örneğin, 0.05) altında olan özellikler, hedef değişkenle düşük korelasyona sahip oldukları için silinir.
+
+2. **Özellikler Arası Korelasyon:** Daha sonra, özellikler arasındaki korelasyon matrisi hesaplanır. Korelasyonun mutlak değeri belirli bir eşik değerin (örneğin, 0.80) üzerinde olan özellik çiftlerinden biri silinir. Bu işlem, yüksek korelasyona sahip ve benzer bilgileri taşıyan özelliklerin modelden çıkarılmasını sağlar.
+
+**Sonuç:**
+
+Korelasyon analizi ve özellik silme işlemleri sonucunda, modelde gereksiz yere karmaşıklığa neden olan değişkenler veri setinden çıkarılmıştır. Bu sayede, modelin daha sade, yorumlanabilir ve etkili olması hedeflenmiştir.
+
+**Görselleştirme:**
+
+Aşağıda, `correlation_heatmap()` fonksiyonu ile oluşturulan ısı haritası görülmektedir.
+
+| ![Image](https://github.com/user-attachments/assets/06a7bcf2-88fb-4201-b6b7-e70d958d2d60) |
+|:-------------------------------------------------------------------------------------------:|
+
+### 5.6. Özellik Ölçeklendirme
 
 `StandardScaler()` kullanılarak özellikler standartlaştırılmıştır.
 
