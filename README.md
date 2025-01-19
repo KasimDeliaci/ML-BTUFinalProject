@@ -345,9 +345,40 @@ Elde edilen sonuçlar, modelin aşırı uyum (overfitting) yaptığını göster
 
 Overfitting problemini çözmek için, bir sonraki adımda Lasso Regresyonu kullanılacaktır. Lasso Regresyonu, L1 düzenlileştirme (regularization) kullanarak modelin karmaşıklığını azaltır ve overfitting'i önlemeye yardımcı olur. L1 düzenlileştirme, modeldeki katsayıların mutlak değerlerinin toplamını cezalandırarak bazı katsayıları sıfıra eşitler ve böylece modelde özellik seçimi yapar. Bu sayede, model daha sade ve genelleme yeteneği daha yüksek hale gelir.
 
-#### 6.1.2. Lasso Regresyonu
+### 6.1.2 Lasso Regresyonu
 
-`train_evaluate_LassoRegression()` fonksiyonu kullanılarak Lasso regresyonu modeli eğitilmiş ve değerlendirilmiştir.
+`train_evaluate_LassoRegression()` fonksiyonu kullanılarak Lasso regresyonu modeli eğitilmiş ve değerlendirilmiştir. Bu fonksiyon, verilen eğitim ve test verilerini kullanarak bir Lasso Regresyon modeli oluşturur ve modelin performansını çeşitli metriklerle değerlendirir. Lasso Regresyonu, Lineer Regresyon'a L1 düzenlileştirme (regularization) ekleyerek modelin karmaşıklığını azaltır ve aşırı uyumu (overfitting) önlemeye yardımcı olur.
+
+**Fonksiyonun Yapısı:**
+
+1.  **Model Oluşturma:** `Lasso()` sınıfından bir model nesnesi oluşturulur. `alpha` parametresi, düzenlileştirmenin gücünü kontrol eder.
+2.  **Model Eğitimi:** `fit()` metodu kullanılarak model, eğitim verileri ile eğitilir.
+3.  **Tahmin Yapma:** `predict()` metodu kullanılarak test verileri üzerinde tahminler yapılır.
+4.  **Performans Değerlendirmesi:** `mean_squared_error()`, `r2_score()` gibi metrikler kullanılarak modelin performansı değerlendirilir.
+5.  **Baseline Model:** Modelin performansını karşılaştırmak için basit bir baseline model oluşturulur. Bu model, tüm tahminleri eğitim verilerinin ortalaması olarak yapar.
+
+**Sonuçlar:**
+
+Lasso Regresyon modelinin performans metrikleri aşağıdaki gibidir:
+
+-   MSE: 4571250.1678
+-   RMSE: 2138.0482
+-   R^2: 0.9907
+
+Baseline Model Performansı:
+
+-   MSE: 504459010.6809
+-   RMSE: 22460.1650
+-   R^2: -0.0294
+
+**Değerlendirme:**
+
+Lasso Regresyon modeli, baseline modelden önemli ölçüde daha iyi performans göstermiştir. MSE ve RMSE değerleri baseline modele göre çok daha düşük, R^2 değeri ise çok daha yüksektir. Bu, Lasso Regresyon modelinin ihracat maliyetlerini tahmin etmede daha başarılı olduğunu göstermektedir.
+
+**Overfitting:**
+
+Lineer Regresyon modeline kıyasla overfitting problemi aşılmıştır. 
+
 
 #### 6.1.3. KNN Regresyonu
 
