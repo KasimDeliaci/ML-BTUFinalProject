@@ -2,6 +2,13 @@
 
 Projeyi detaylıca açıkladığım  videoya bu linkten ulaşabilirsiniz: [Proje Videosu](https://youtu.be/0mwifx_6iko)
 
+**Makine Öğrenmesi Sertifikam**
+
+[Sertifika](https://certificate.miuul.com/kasim_deliaci)
+
+| ![Image 1](https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/kasim_deliaci_certificate.png) | 
+|:-------------------------------------------------------------------------------------------:|
+
 ## İçindekiler
 
 - [1. Proje Genel Bakış](#1-proje-genel-bakış)
