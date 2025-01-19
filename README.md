@@ -177,7 +177,7 @@ Bu projede izlenen adımlar genel olarak aşağıdaki gibidir:
 
 | | |
 |---|---|
-| <img width=400 src="görsel_1_linki"> | <img width=400 src="görsel_2_linki"> |
+| <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/toplam-yurt-disi-harcamalar.png"> | <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/toplam-yurt-ici-harcamalar.png"> |
 | <img width=400 src="görsel_3_linki"> | <img width=400 src="görsel_4_linki"> |
 | ... | ... | 
 
