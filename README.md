@@ -594,10 +594,44 @@ Elbow yöntemi ile optimum küme sayısının 4 olduğu belirlenmiş ve hiyerar�
 
 Hiyerarşik kümeleme modeli, ihracat verilerindeki anormallikleri tespit etmek için kullanılabilir. Modelin performansı, silhouette skoru incelenerek değerlendirilebilir. Ancak, daha yüksek bir silhouette skoru elde etmek için farklı kümeleme algoritmaları veya parametreleri denenebilir.
 
-#### 6.2.3. Isolation Forest
+### 6.2.3 Isolation Forest
 
-`train_evaluate_IsolationForest()` fonksiyonu kullanılarak Isolation Forest modeli eğitilmiş ve değerlendirilmiştir.
+`train_evaluate_IsolationForest()` fonksiyonu kullanılarak Isolation Forest modeli eğitilmiş ve değerlendirilmiştir. Bu fonksiyon, verilen veri setini kullanarak bir Isolation Forest modeli oluşturur ve modelin performansını silhouette skoru ile değerlendirir. Isolation Forest, anormallikleri normal veri noktalarından izole ederek tespit eden bir algoritmadır.
 
+**Fonksiyonun Yapısı:**
+
+1.  **Model Oluşturma:** `IsolationForest()` sınıfından bir model nesnesi oluşturulur. `contamination` parametresi, veri setindeki anormalliklerin oranını belirler.
+2.  **Model Eğitimi:** `fit()` metodu kullanılarak model, eğitim verileri ile eğitilir.
+3.  **Anormallik Etiketlerinin Tahmin Edilmesi:** `predict()` metodu kullanılarak veri noktalarının anormal olup olmadığı tahmin edilir.
+4.  **Performans Değerlendirmesi:** `silhouette_score()` fonksiyonu kullanılarak modelin performansı değerlendirilir. Silhouette skoru, kümelerin ne kadar iyi ayrıldığını ve veri noktalarının kendi kümelerine ne kadar iyi ait olduğunu ölçer.
+
+**Sonuçlar:**
+
+Isolation Forest modelinin performans metriği ve tespit edilen anormallik sayısı aşağıdaki gibidir:
+
+-   Silhouette Score: 0.31314024357577397
+-   Anomalies Detected: 53
+
+**Değerlendirme:**
+
+0.3131'lik Silhouette skoru, Isolation Forest modelinin K-Means ve Hiyerarşik Kümeleme modellerine göre daha iyi performans gösterdiğini ve anormallikleri daha iyi tespit ettiğini göstermektedir.
+
+**Sonuç:**
+
+Isolation Forest modeli, ihracat verilerindeki anormallikleri tespit etmek için etkili bir yöntemdir. Modelin performansı, silhouette skoru ve tespit edilen anormallik sayısı incelenerek değerlendirilebilir.
+
+
+### Genel Yorum ve Karşılaştırma
+
+Bu projede, denetimsiz öğrenme yöntemleri kullanılarak ihracat verilerindeki anormallikler tespit edilmeye çalışılmıştır. K-Means, Hiyerarşik Kümeleme ve Isolation Forest olmak üzere üç farklı kümeleme algoritması kullanılmıştır. Her algoritmanın kendine özgü avantajları ve dezavantajları vardır.
+
+-   K-Means, basit ve hızlı bir algoritmadır, ancak küme sayısının önceden belirlenmesi gerekir ve kümelerin şekli ve boyutuna duyarlıdır.
+-   Hiyerarşik Kümeleme, küme sayısının önceden belirlenmesini gerektirmez ve farklı şekil ve boyutlardaki kümeleri tespit edebilir, ancak K-Means'e göre daha yavaştır.
+-   Isolation Forest, anormallikleri normal veri noktalarından izole ederek tespit eder ve özellikle yüksek boyutlu verilerde etkilidir.
+
+Bu projede elde edilen sonuçlara göre, Isolation Forest modeli en yüksek silhouette skoruna sahip olup, anormallikleri tespit etmede diğer iki modelden daha başarılı olmuştur. Ancak, her veri seti için en iyi performansı gösteren algoritma farklılık gösterebilir. Bu nedenle, farklı algoritmaları denemek ve performanslarını karşılaştırmak önemlidir.
+
+Sonuç olarak, denetimsiz öğrenme yöntemleri, ihracat verilerindeki anormallikleri tespit etmek ve potansiyel sorunları veya iyileştirme fırsatlarını belirlemek için etkili bir şekilde kullanılabilir.
 ## 7. Sonuçlar
 
 Bu bölümde, modellerin performans metrikleri ve karşılaştırılması sunulmaktadır. Ayrıca, projede elde edilen önemli bulgular ve sonuçlar özetlenmektedir.
