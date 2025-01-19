@@ -179,7 +179,7 @@ Bu projede izlenen adımlar genel olarak aşağıdaki gibidir:
 |---|---|
 | <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/toplam-yurt-disi-harcamalar.png"> | <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/toplam-yurt-ici-harcamalar.png"> |
 | <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/toplamfatura.png"> | <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/yurtici-diger.png"> |
-| <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/toplam-sigorta_dovizi.png"> | <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/toplam-sigorta.png"> |
+| <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/brut-agirlik.png"> | <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/toplam-sigorta.png"> |
 | <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/toplam-navlun.png"> | <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/sigorta.png"> |
 | <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/sigorta-miktari.png"> | <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/net-agirlik.png"> |
 | <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/navlun-miktari.png"> | <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/nakliye.png"> |
