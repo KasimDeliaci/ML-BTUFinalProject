@@ -549,8 +549,8 @@ K-Means kümeleme modelinin performans metriği ve optimum küme sayısı aşağ
 | ![Elbow Grafiği](https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/kmeans-elbow.png) |
 |:-------------------------------------------------------------------------------------------:|
 
-| ![Image 1](https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/kmeans-pca1.png) | ![Image 2](https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/kmeans-pca2.png) 
-|:-------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------
+| ![Image 1](https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/kmeans-pca1.png) | 
+|:-------------------------------------------------------------------------------------------:|
 
 **Değerlendirme:**
 
