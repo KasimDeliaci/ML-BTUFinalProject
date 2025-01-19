@@ -377,12 +377,46 @@ Lasso Regresyon modeli, baseline modelden önemli ölçüde daha iyi performans 
 
 **Overfitting:**
 
-Lineer Regresyon modeline kıyasla overfitting problemi aşılmıştır. 
+Lineer Regresyon modeline kıyasla overfitting problemi aşılmış olsa da R^2 değeri hala oldukça yüksek olduğu için modelin genelleştirme performansı çok iyi değildir. KNN kullanarak daha dengeli bir model elde etmeye çalışalım.
 
 
-#### 6.1.3. KNN Regresyonu
+### 6.1.3 KNN Regresyonu
 
-`train_evaluate_KNNRegressor()` fonksiyonu kullanılarak KNN regresyonu modeli eğitilmiş ve değerlendirilmiştir.
+`train_evaluate_KNNRegressor()` fonksiyonu kullanılarak KNN (K-En Yakın Komşu) regresyonu modeli eğitilmiş ve değerlendirilmiştir. Bu fonksiyon, verilen eğitim ve test verilerini kullanarak bir KNN Regresyon modeli oluşturur ve modelin performansını çeşitli metriklerle değerlendirir. KNN Regresyonu, bir veri noktasının değerini, en yakın komşularının değerlerinin ortalaması olarak tahmin eder.
+
+**Fonksiyonun Yapısı:**
+
+1.  **Model Oluşturma:** `KNeighborsRegressor()` sınıfından bir model nesnesi oluşturulur. `n_neighbors` parametresi, komşu sayısını belirler.
+2.  **Model Eğitimi:** `fit()` metodu kullanılarak model, eğitim verileri ile eğitilir. 
+3.  **Tahmin Yapma:** `predict()` metodu kullanılarak test verileri üzerinde tahminler yapılır. Her bir test verisi için, en yakın `n_neighbors` komşusu bulunur ve bu komşuların hedef değişken değerlerinin ortalaması alınarak tahmin yapılır.
+4.  **Performans Değerlendirmesi:** `mean_squared_error()`, `r2_score()` gibi metrikler kullanılarak modelin performansı değerlendirilir.
+5.  **Baseline Model:** Modelin performansını karşılaştırmak için basit bir baseline model oluşturulur. Bu model, tüm tahminleri eğitim verilerinin ortalaması olarak yapar.
+
+**Sonuçlar:**
+
+KNN Regresyon modelinin performans metrikleri aşağıdaki gibidir:
+
+-   MSE: 38312002.9416
+-   RMSE: 6189.6690
+-   R^2: 0.9218
+
+Baseline Model Performansı:
+
+-   MSE: 504459010.6809
+-   RMSE: 22460.1650
+-   R^2: -0.0294
+
+**Değerlendirme:**
+
+KNN Regresyon modeli, baseline modelden önemli ölçüde daha iyi performans göstermiştir. MSE ve RMSE değerleri baseline modele göre çok daha düşük, R^2 değeri ise çok daha yüksektir. Bu, KNN Regresyon modelinin ihracat maliyetlerini tahmin etmede daha başarılı olduğunu göstermektedir. Ayrıca Lineer ve Lasso'da yaşanılan overfitting probleminin önüne geçilerek daha genelleştirilebilir bir model elde edilmiştir.
+
+**Modelin Optimizasyonu:**
+
+KNN Regresyon modelinin performansını artırmak için, `n_neighbors` parametresi gibi hiperparametreler optimize edilebilir. Ayrıca, farklı uzaklık metrikleri denenebilir.
+
+**Sonuç:**
+
+KNN Regresyon modeli, ihracat maliyetlerini tahmin etmede baseline modelden çok daha başarılıdır ve verileri iyi bir şekilde açıklayabilir. Bu model, işletmelere ihracat maliyetlerini tahmin etme ve planlama konusunda yardımcı olabilir.
 
 #### 6.1.4. Random Forest Regresyonu
 
