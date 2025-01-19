@@ -539,9 +539,10 @@ Denetimsiz öğrenme modellerinin çoğu, verilerin ölçeklendirilmesinden etki
 
 **Sonuçlar:**
 
-K-Means kümeleme modelinin performans metriği aşağıdaki gibidir:
+K-Means kümeleme modelinin performans metriği ve optimum küme sayısı aşağıdaki gibidir:
 
--   Silhouette Skoru: \[Silhouette skoru buraya gelecek]
+-   Optimal Number of Clusters (k): 7
+-   Silhouette Score: 0.20683424692694305
 
 **Elbow Grafiği:**
 
@@ -551,6 +552,13 @@ K-Means kümeleme modelinin performans metriği aşağıdaki gibidir:
 | ![Image 1](https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/kmeans-pca1.png) | ![Image 2](https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/kmeans-pca2.png) 
 |:-------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------
 
+**Değerlendirme:**
+
+Elbow grafiği incelenerek optimum küme sayısının 7 olduğu belirlenmiş ve K-Means modeli bu küme sayısı ile eğitilir.  0.2068'lik Silhouette skoru, kümelerin orta düzeyde ayrıldığını ve veri noktalarının kendi kümelerine orta düzeyde ait olduğunu gösterir.  Bu skor, kümelemenin mükemmel olmadığını, ancak veri setinde bazı anlamlı grupların olduğunu gösterebilir. 
+
+**Sonuç:**
+
+K-Means kümeleme modeli, ihracat verilerindeki anormallikleri tespit etmek için kullanılabilir. Modelin performansı, silhouette skoru ve elbow grafiği incelenerek değerlendirilebilir.  Ancak, daha yüksek bir silhouette skoru elde etmek için farklı kümeleme algoritmaları veya parametreleri denenebilir.
 
 #### 6.2.2. Hiyerarşik Kümeleme
 
