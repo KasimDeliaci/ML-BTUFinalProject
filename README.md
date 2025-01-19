@@ -173,19 +173,10 @@ Bu projede izlenen adımlar genel olarak aşağıdaki gibidir:
 
 ## Görselleştirme 
 
-<div align="center">
-  <table>
-    <tr>
-      <th>Başlangıç Ekranı</th>
-      <
-      <th>Oyun Bitiş Ekranı</th>
-    </tr>
-    <tr>
-      <td><img width=150 src="https://github.com/KasimDeliaci/snakegame/blob/main/ScreenShots/initial.png"></td>
-      <td><img width=150 src="https://github.com/KasimDeliaci/snakegame/blob/main/ScreenShots/gameOver.png"></td>
-    </tr>
-  </table>
-</div>
+| | |
+|---|---|
+| <img width=150 src="https://github.com/KasimDeliaci/snakegame/blob/main/ScreenShots/initial.png"> | <img width=150 src="https://github.com/KasimDeliaci/snakegame/blob/main/ScreenShots/midGame.png"> |
+| <img width=150 src="https://github.com/KasimDeliaci/snakegame/blob/main/ScreenShots/boost.png"> | <img width=150 src="https://github.com/KasimDeliaci/snakegame/blob/main/ScreenShots/gameOver.png"> |
 
 ## 5. Veri Ön İşleme
 
