@@ -525,9 +525,29 @@ Denetimsiz öğrenme modellerinin çoğu, verilerin ölçeklendirilmesinden etki
 
 Özelliklerin standartlaştırılması, denetimsiz öğrenme modellerinin daha doğru ve güvenilir sonuçlar üretmesine yardımcı olur. Bu sayede, ihracat verilerindeki anormallikler daha etkili bir şekilde tespit edilebilir.
 
-#### 6.2.1. K-Means Kümeleme
+### 6.2.1 K-Means Kümeleme
 
-`train_evaluate_KMeans()` fonksiyonu kullanılarak K-Means kümeleme modeli eğitilmiş ve değerlendirilmiştir.
+`train_evaluate_KMeans()` fonksiyonu kullanılarak K-Means kümeleme modeli eğitilmiş ve değerlendirilmiştir. Bu fonksiyon, verilen veri setini kullanarak bir K-Means kümeleme modeli oluşturur ve modelin performansını silhouette skoru ile değerlendirir. K-Means, veri noktalarını benzerliklerine göre belirli sayıda kümeye ayırır.
+
+**Fonksiyonun Yapısı:**
+
+1.  **Optimum Küme Sayısının Belirlenmesi:** Elbow yöntemi kullanılarak optimum küme sayısı belirlenir. Bu yöntemde, farklı küme sayıları için modelin within-cluster sum of squares (WCSS) değeri hesaplanır ve bu değerlerin değişimine göre optimum küme sayısı seçilir.
+2.  **Model Oluşturma:** `KMeans()` sınıfından bir model nesnesi oluşturulur. `n_clusters` parametresi, küme sayısını belirler.
+3.  **Model Eğitimi:** `fit()` metodu kullanılarak model, eğitim verileri ile eğitilir.
+4.  **Küme Etiketlerinin Tahmin Edilmesi:** `predict()` metodu kullanılarak veri noktalarının hangi kümeye ait olduğu tahmin edilir.
+5.  **Performans Değerlendirmesi:** `silhouette_score()` fonksiyonu kullanılarak modelin performansı değerlendirilir. Silhouette skoru, kümelerin ne kadar iyi ayrıldığını ve veri noktalarının kendi kümelerine ne kadar iyi ait olduğunu ölçer.
+
+**Sonuçlar:**
+
+K-Means kümeleme modelinin performans metriği aşağıdaki gibidir:
+
+-   Silhouette Skoru: \[Silhouette skoru buraya gelecek]
+
+**Elbow Grafiği:**
+
+| ![Elbow Grafiği](https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/corrheatmap.png) |
+|:-------------------------------------------------------------------------------------------:|
+
 
 #### 6.2.2. Hiyerarşik Kümeleme
 
