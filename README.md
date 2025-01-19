@@ -679,23 +679,55 @@ Bu projede, denetimsiz öğrenme yöntemleri kullanılarak ihracat verilerindeki
 Bu projede elde edilen sonuçlara göre, Isolation Forest modeli en yüksek silhouette skoruna sahip olup, anormallikleri tespit etmede diğer iki modelden daha başarılı olmuştur. Ancak, her veri seti için en iyi performansı gösteren algoritma farklılık gösterebilir. Bu nedenle, farklı algoritmaları denemek ve performanslarını karşılaştırmak önemlidir.
 
 Sonuç olarak, denetimsiz öğrenme yöntemleri, ihracat verilerindeki anormallikleri tespit etmek ve potansiyel sorunları veya iyileştirme fırsatlarını belirlemek için etkili bir şekilde kullanılabilir.
-## 7. Sonuçlar
 
-Bu bölümde, modellerin performans metrikleri ve karşılaştırılması sunulmaktadır. Ayrıca, projede elde edilen önemli bulgular ve sonuçlar özetlenmektedir.
+# 7. Sonuçlar ve Öğrendiklerim 🎓
 
-## 8. Kurulum ve Kullanım
+Bu projede ihracat maliyetlerini tahmin etmek ve anormallikleri bulmak için farklı makine öğrenmesi modelleri denedim. İşte bu süreçte öğrendiklerim ve elde ettiğim sonuçlar:
 
-Bu projeyi çalıştırmak için aşağıdaki adımları izleyin:
+## Neler Öğrendim? 📚
 
-1. Proje kodlarını klonlayın veya indirin.
-2. Gerekli kütüphaneleri yükleyin.
-3. Veri setlerini `data/` dizinine yerleştirin.
-4. Jupyter Notebook dosyalarını çalıştırın veya Python script dosyalarını çalıştırın.
+### Veri Hazırlığının Önemi
+Açıkçası projenin başında veri ön işlemenin bu kadar önemli olduğunu düşünmüyordum. Eksik verileri doldurmak, aykırı değerleri düzeltmek ve kategorik değişkenleri sayısal hale getirmek gibi işlemler, modellerimin performansını inanılmaz derecede artırdı.
 
-## 9. Katkıda Bulunma
+### Özellik Mühendisliği Deneyimi
+Yeni değişkenler oluşturmak başta korkutucu gelse de, zamanla bunun modelin başarısı için ne kadar kritik olduğunu gördüm. Özellikle ihracat verileriyle çalışırken, farklı para birimlerini ve ölçü birimlerini düzenlemenin önemini kavradım.
 
-Bu projeye katkıda bulunmak isteyenler, aşağıdaki adımları izleyebilirler:
+### Model Karşılaştırmaları
+Birçok farklı model denedim:
+* Lineer Regresyon (klasik ama etkili! ancak overfit oldu)
+* Lasso Regresyonu 
+* KNN (en yakın komşular)
+* Random Forest
+* XGBoost
 
-1. Proje kodlarını forklayın.
-2. Değişikliklerinizi yapın.
-3. Pull request oluşturun.
+XGBoost'un diğerlerinden daha iyi sonuç vermesi beni şaşırtmadı çünkü hem ağaç tabanlı hem de boosting kullanıyor. Başta karmaşık gelen bu model, zamanla en çok sevdiğim modellerden biri oldu. Ancak overfit problemini çözmek beni zorladı.
+
+## Anormallik Tespiti Deneyimim 🔍
+
+Üç farklı model kullandım:
+* K-Means
+* Hiyerarşik Kümeleme
+* Isolation Forest
+
+Isolation Forest'ın en iyi sonucu vermesini bekliyordum ağaç tabalı olduğu için, Silhouette skorları bunu açıkça gösterdi.
+
+## Teknik Açıdan Kazanımlarım 💻
+
+* Python'da kendimi çok geliştirdim
+* Pandas ve NumPy kütüphanelerini artık daha iyi kullanabiliyorum
+* Scikit-learn'ü keşfettim
+* XGBoost gibi gelişmiş kütüphaneleri kullanmayı öğrendim
+
+## Gelecek İçin Planlarım 🚀
+
+* Daha fazla veri toplayıp modellerimi geliştirmek istiyorum
+* Henüz denemediğim algoritmaları da deneyeceğim
+* Anormallik tespiti için başka yöntemler de araştıracağım
+* Modellerin sonuçlarını daha anlaşılır hale getirmeye çalışacağım
+
+## Son Düşüncelerim 💭
+
+Bu proje bana makine öğrenmesinin gerçek dünya problemlerinde nasıl kullanılabileceğini gösterdi. Başta zorlandığım konuları şimdi daha iyi anlıyorum. İhracat sektöründe veri biliminin önemini kavradım ve bu alanda daha fazla çalışma yapmak istiyorum.
+
+Özellikle veri ön işleme ve model seçimi konularında çok şey öğrendim. Her ne kadar bazen zorlandığım anlar olsa da, sonuçta ortaya güzel bir iş çıkardığımı düşünüyorum. Bu deneyim, gelecekteki projelerim için bana güzel bir temel oluşturdu.
+
