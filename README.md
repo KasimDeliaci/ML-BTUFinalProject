@@ -177,14 +177,11 @@ Bu projede izlenen adımlar genel olarak aşağıdaki gibidir:
   <table>
     <tr>
       <th>Başlangıç Ekranı</th>
-      <th>Oynanış Anı</th>
-      <th>Boost Anı</th>
+      <
       <th>Oyun Bitiş Ekranı</th>
     </tr>
     <tr>
       <td><img width=150 src="https://github.com/KasimDeliaci/snakegame/blob/main/ScreenShots/initial.png"></td>
-      <td><img width=150 src="https://github.com/KasimDeliaci/snakegame/blob/main/ScreenShots/midGame.png"></td>
-      <td><img width=150 src="https://github.com/KasimDeliaci/snakegame/blob/main/ScreenShots/boost.png"></td>
       <td><img width=150 src="https://github.com/KasimDeliaci/snakegame/blob/main/ScreenShots/gameOver.png"></td>
     </tr>
   </table>
