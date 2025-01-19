@@ -457,9 +457,50 @@ Random Forest modeli, baseline modelden önemli ölçüde daha iyi performans g�
 
 Random Forest modeli, ihracat maliyetlerini tahmin etmede baseline modelden çok daha başarılıdır ve verileri iyi bir şekilde açıklayabilir. Bu model, işletmelere ihracat maliyetlerini tahmin etme ve planlama konusunda yardımcı olabilir.
 
-#### 6.1.5. XGBoost Regresyonu
+### 6.1.5 XGBoost Regresyonu
 
-`train_evaluate_XGBoost()` fonksiyonu kullanılarak XGBoost regresyonu modeli eğitilmiş ve değerlendirilmiştir.
+`train_evaluate_XGBoost()` fonksiyonu kullanılarak XGBoost regresyonu modeli eğitilmiş ve değerlendirilmiştir. Bu fonksiyon, verilen eğitim ve test verilerini kullanarak bir XGBoost Regresyon modeli oluşturur ve modelin performansını çeşitli metriklerle değerlendirir. XGBoost, yüksek performans ve hız sağlayan bir gradient boosting algoritmasıdır.
+
+**Fonksiyonun Yapısı:**
+
+1.  **Model Oluşturma:** `XGBRegressor()` sınıfından bir model nesnesi oluşturulur. `n_estimators`, `max_depth`, `learning_rate` gibi parametreler, modelin karmaşıklığını ve öğrenme hızını kontrol eder.
+2.  **Model Eğitimi:** `fit()` metodu kullanılarak model, eğitim verileri ile eğitilir.
+3.  **Tahmin Yapma:** `predict()` metodu kullanılarak test verileri üzerinde tahminler yapılır.
+4.  **Performans Değerlendirmesi:** `mean_squared_error()`, `r2_score()` gibi metrikler kullanılarak modelin performansı değerlendirilir.
+5.  **Baseline Model:** Modelin performansını karşılaştırmak için basit bir baseline model oluşturulur. Bu model, tüm tahminleri eğitim verilerinin ortalaması olarak yapar.
+
+**Sonuçlar:**
+
+XGBoost Regresyon modelinin performans metrikleri aşağıdaki gibidir:
+
+-   MSE: 3658424.5340
+-   RMSE: 1912.7008
+-   R^2: 0.9925
+
+Baseline Model Performansı:
+
+-   MSE: 504459010.6809
+-   RMSE: 22460.1650
+-   R^2: -0.0294
+
+**Değerlendirme:**
+
+XGBoost Regresyon modeli, baseline modelden ve diğer modellerden (Lineer Regresyon, Lasso Regresyonu, KNN) önemli ölçüde daha iyi performans göstermiştir. MSE ve RMSE değerleri diğer modellere göre daha düşük, R^2 değeri ise daha yüksektir. Bu, XGBoost modelinin ihracat maliyetlerini tahmin etmede daha başarılı olduğunu göstermektedir.
+
+**XGBoost'un Avantajları:**
+
+-   **Yüksek Performans:** XGBoost, genellikle diğer makine öğrenmesi algoritmalarından daha yüksek tahmin performansı sağlar.
+-   **Hız:** XGBoost, paralel hesaplama ve optimizasyon teknikleri sayesinde hızlı bir şekilde eğitilebilir.
+-   **Esneklik:** XGBoost, çeşitli veri tipleri ve problemler için kullanılabilir.
+-   **Overfitting'e Karşı Dayanıklılık:** XGBoost, düzenlileştirme teknikleri ve çapraz doğrulama ile overfitting'i önlemeye yardımcı olur.
+
+**Sonuç:**
+
+XGBoost Regresyon modeli, ihracat maliyetlerini tahmin etmede diğer modellere göre daha başarılıdır ve verileri iyi bir şekilde açıklayabilir. Bu model, işletmelere ihracat maliyetlerini tahmin etme ve planlama konusunda yardımcı olabilir.
+
+**FİNAL: Genel Yorum:**
+
+Projede kullanılan tüm modeller (Lineer Regresyon, Lasso Regresyonu, KNN, Random Forest ve XGBoost), baseline modelden daha iyi performans göstermiştir. Bu, makine öğrenmesi modellerinin ihracat maliyetlerini tahmin etmede etkili olabileceğini göstermektedir. Modeller arasında karşılaştırma yapıldığında, XGBoost modelinin en iyi performansı gösterdiği görülmüştür. Bu sonuç, XGBoost algoritmasının karmaşık problemlerde yüksek tahmin doğruluğu sağlama yeteneğini göstermektedir.
 
 ### 6.2. Denetimsiz (Unsupervised) Öğrenme (Anomali Tespiti)
 
