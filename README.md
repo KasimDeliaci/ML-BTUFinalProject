@@ -35,7 +35,6 @@ Bu projede ATEZ YAZILIM TEKNOLOJİLERİ A.Ş'nin sağlamış olduğu gümrük/ih
     - **Kap adedi ve ağırlık bilgileri**: Ürünlerin hacmi ve ağırlığı, nakliye maliyetlerini doğrudan etkileyen faktörlerdir.
     - **Nakliye ve sigorta maliyetleri**: Bu maliyetler, toplam ihracat maliyetinin önemli bir bölümünü oluşturur.
     - **Yurt içi/dışı harcamalar**: Gümrük vergileri, liman ücretleri, depolama maliyetleri gibi yurt içi ve yurt dışı harcamalar da toplam maliyeti etkiler.
-    - **Döviz bilgileri**: Kur dalgalanmaları, ihracat maliyetlerinde önemli değişikliklere neden olabilir. Bu nedenle, döviz bilgileri de modelde dikkate alınmıştır.
 
 - **İş Değeri**:
 
