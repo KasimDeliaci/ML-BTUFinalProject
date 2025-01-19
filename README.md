@@ -161,12 +161,32 @@ Bu projede izlenen adımlar genel olarak aşağıdaki gibidir:
 
 Bu bölümde, veri seti üzerinde yapılan ön işleme adımları detaylı bir şekilde açıklanmaktadır.
 
-### 5.1. Eksik Verilerin İşlenmesi
+### 5.1 Eksik Verilerin İşlenmesi
 
-Veri setindeki eksik veriler, aşağıdaki yöntemler kullanılarak ele alınmıştır:
+Veri setindeki eksik veriler, aşağıdaki adımlar izlenerek ele alınmıştır:
 
-- **Silme:** `delete_columns_with_high_missing_ratio()` fonksiyonu kullanılarak eksik veri oranı yüksek olan sütunlar veri setinden silinmiştir.
-- **Doldurma:** `fillna()` fonksiyonu kullanılarak eksik veriler mod ile doldurulmuştur.
+1. **Eksik Veri Oranı Yüksek Sütunların Silinmesi:**
+
+   - `delete_columns_with_high_missing_ratio()` fonksiyonu kullanılarak eksik veri oranı %40'ın üzerinde olan sütunlar veri setinden silinmiştir. Bu fonksiyon, her sütundaki eksik veri oranını hesaplar ve belirlenen eşik değerini aşan sütunları siler.
+
+2. **Kategorik Değişkenlerdeki Eksik Verilerin Mod ile Doldurulması:**
+
+   - `fillna()` fonksiyonu kullanılarak `Navlun_miktarinin_dovizi`, `Toplam_sigorta_dovizi` ve `Sigorta_miktarinin_dovizi` sütunlarındaki eksik veriler, o sütunun en sık görülen değeri (mod) ile doldurulmuştur. 
+
+3. **Gereksiz Sütunların Silinmesi:**
+
+   - `drop()` fonksiyonu kullanılarak `gonderici_id` ve `file_name` sütunları veri setinden silinmiştir. Bu sütunlar, XML dosyalarını ayrıştırırken kullanılan ve modelleme için gerekli olmayan sütunlardır.
+
+**Eksik Veri Analizi Sonuçları:**
+
+-   Başlangıçta veri setinde 27 özellik bulunmaktadır.
+-   Yukarıdaki işlemler sonucunda 7 özellik silinmiş, 3 özellikteki eksik veriler doldurulmuş ve 2 özellik silinmiştir.
+-   Sonuç olarak, veri setinde 15 özellik kalmıştır ve hiçbirinde eksik veri bulunmamaktadır.
+
+**Sıfır Değer Analizi ve Sütun Silinmesi:**
+
+-   `check_zero_ratio()` fonksiyonu ile veri setindeki sıfır değerlerinin oranı analiz edilmiştir. Bu fonksiyon, her sütundaki sıfır değerlerinin oranını hesaplar.
+-   Sıfır oranı %63'ün üzerinde olan 5 özellik (`Ihracat_fatura_tutari`, `Esya_bedeli`, `Toplam_esya_bedeli`, `Toplam_navlun`, `Toplam_sigorta_bedeli`) `drop()` fonksiyonu ile veri setinden silinmiştir.
 
 ### 5.2. Aykırı Değerlerin Tespiti ve Düzeltilmesi
 
