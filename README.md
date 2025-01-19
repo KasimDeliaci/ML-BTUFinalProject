@@ -189,6 +189,7 @@ Veri setindeki eksik veriler, aşağıdaki adımlar izlenerek ele alınmıştır
 -   `check_zero_ratio()` fonksiyonu ile veri setindeki sıfır değerlerinin oranı analiz edilmiştir. Bu fonksiyon, her sütundaki sıfır değerlerinin oranını hesaplar.
 -   Sıfır oranı %63'ün üzerinde olan 5 özellik (`Ihracat_fatura_tutari`, `Esya_bedeli`, `Toplam_esya_bedeli`, `Toplam_navlun`, `Toplam_sigorta_bedeli`) `drop()` fonksiyonu ile veri setinden silinmiştir.
 -   Kalan oranları işbilgine dayanarak ve araştırmalarım sonucu anlamlı olabileceğini fark ettiğim için bıraktım, mesela bazı ürünlerde devlet teşviki gibi nedenlerden dolayı bazı kalemlerin giderleri sıfırlanabiliyor.
+-   Anlamsız ve yüksek sayıda sıfır içeren sütunlar da silindikten sonra veri setinde 33 sütun kalmıştır.
 
 ### 5.2. Aykırı Değerlerin Tespiti ve Düzeltilmesi
 
