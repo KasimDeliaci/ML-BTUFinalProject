@@ -1,5 +1,7 @@
 # İhracat Maliyet Analizi ve Anomali Tespiti Projesi
 
+Projeyi detaylıca açıkladığım  videoya bu linkten ulaşabilirsiniz: [Proje Videosu](https://youtu.be/0mwifx_6iko)
+
 ## İçindekiler
 
 - [1. Proje Genel Bakış](#1-proje-genel-bakış)
