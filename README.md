@@ -173,17 +173,17 @@ Bu projede izlenen adımlar genel olarak aşağıdaki gibidir:
 
 ## Görselleştirme 
 
-## Görseller
+<div align="center">
 
 | | |
 |---|---|
 | <img width=400 src="görsel_1_linki"> | <img width=400 src="görsel_2_linki"> |
 | <img width=400 src="görsel_3_linki"> | <img width=400 src="görsel_4_linki"> |
-| <img width=400 src="görsel_5_linki"> | <img width=400 src="görsel_6_linki"> |
-| <img width=400 src="görsel_7_linki"> | <img width=400 src="görsel_8_linki"> |
-| <img width=400 src="görsel_9_linki"> | <img width=400 src="görsel_10_linki"> |
-| <img width=400 src="görsel_11_linki"> | <img width=400 src="görsel_12_linki"> |
-| <img width=400 src="görsel_13_linki"> | <img width=400 src="görsel_14_linki"> |
+| ... | ... | 
+
+</div>
+
+
 ## 5. Veri Ön İşleme
 
 Bu bölümde, veri seti üzerinde yapılan ön işleme adımları detaylı bir şekilde açıklanmaktadır.
