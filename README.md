@@ -501,6 +501,7 @@ XGBoost Regresyon modeli, ihracat maliyetlerini tahmin etmede diğer modellere g
 **FİNAL: Genel Yorum:**
 
 Projede kullanılan tüm modeller (Lineer Regresyon, Lasso Regresyonu, KNN, Random Forest ve XGBoost), baseline modelden daha iyi performans göstermiştir. Bu, makine öğrenmesi modellerinin ihracat maliyetlerini tahmin etmede etkili olabileceğini göstermektedir. Modeller arasında karşılaştırma yapıldığında, XGBoost modelinin en iyi performansı gösterdiği görülmüştür. Bu sonuç, XGBoost algoritmasının karmaşık problemlerde yüksek tahmin doğruluğu sağlama yeteneğini göstermektedir.
+---
 
 ### 6.2. Denetimsiz (Unsupervised) Öğrenme (Anomali Tespiti)
 
