@@ -189,6 +189,20 @@ Bu projede izlenen adımlar genel olarak aşağıdaki gibidir:
 
 </div>
 
+---
+
+<div align="center">
+
+| | |
+|---|---|
+| <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/dist-odeme-sekli-kodu.png"> | <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/dist-rejim.png"> |
+| <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/dist-tesli-sekli"> | <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/dist-teslim-yeri.png"> |
+| <img width=400 src="https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/dist-vergi-kodu.png"> 
+| ... | ... | 
+
+</div>
+
+
 
 ## 5. Veri Ön İşleme
 
