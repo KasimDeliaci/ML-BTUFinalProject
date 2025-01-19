@@ -6,6 +6,7 @@
 - [2. Özellikler](#2-özellikler)
 - [3. Gereksinimler](#3-gereksinimler)
 - [4. Projenin Akışı](#4-proje-yapısı)
+- [Görselleştirme](#Görselleştirme)
 - [5. Veri Ön İşleme](#5-veri-ön-işleme)
 - [6. Modeller](#6-modeller)
     - [6.1. Denetimli (Supervised) Öğrenme (Regresyon)](#61-denetimli-supervised-öğrenme-regresyon)
@@ -168,6 +169,26 @@ Bu projede izlenen adımlar genel olarak aşağıdaki gibidir:
     -   Denetimli öğrenme (regresyon) için `train_evaluate_linearRegression()`, `train_evaluate_LassoRegression()`, `train_evaluate_KNNRegressor()`, `train_evaluate_RandomForest_with_CV()`, `train_evaluate_XGBoost()` fonksiyonları kullanılarak farklı modeller eğitilir ve değerlendirilir.
     -   Denetimsiz öğrenme (anomali tespiti) için `train_evaluate_KMeans()`, `train_evaluate_HierarchicalKMeans()`, `train_evaluate_IsolationForest()` fonksiyonları kullanılarak farklı modeller eğitilir ve değerlendirilir.
 
+---
+
+## Görselleştirme 
+
+<div align="center">
+  <table>
+    <tr>
+      <th>Başlangıç Ekranı</th>
+      <th>Oynanış Anı</th>
+      <th>Boost Anı</th>
+      <th>Oyun Bitiş Ekranı</th>
+    </tr>
+    <tr>
+      <td><img width=150 src="https://github.com/KasimDeliaci/snakegame/blob/main/ScreenShots/initial.png"></td>
+      <td><img width=150 src="https://github.com/KasimDeliaci/snakegame/blob/main/ScreenShots/midGame.png"></td>
+      <td><img width=150 src="https://github.com/KasimDeliaci/snakegame/blob/main/ScreenShots/boost.png"></td>
+      <td><img width=150 src="https://github.com/KasimDeliaci/snakegame/blob/main/ScreenShots/gameOver.png"></td>
+    </tr>
+  </table>
+</div>
 
 ## 5. Veri Ön İşleme
 
