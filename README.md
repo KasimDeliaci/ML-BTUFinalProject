@@ -584,10 +584,10 @@ Elbow yöntemi ile optimum küme sayısının 4 olduğu belirlenmiş ve hiyerar�
 
 **Elbow ve PCA Grafiği:**
 
-| ![Elbow Grafiği](https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/kmeans-elbow.png) |
+| ![Elbow Grafiği](https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/hier-elbow.png) |
 |:-------------------------------------------------------------------------------------------:|
 
-| ![Image 1](https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/kmeans-pca1.png) | 
+| ![Image 1](https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/hier-pca1.png) | 
 |:-------------------------------------------------------------------------------------------:|
 
 **Sonuç:**
