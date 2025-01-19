@@ -545,8 +545,11 @@ K-Means kümeleme modelinin performans metriği aşağıdaki gibidir:
 
 **Elbow Grafiği:**
 
-| ![Elbow Grafiği](https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/corrheatmap.png) |
+| ![Elbow Grafiği](https://github.com/KasimDeliaci/ML-BTUFinalProject/blob/main/img/kmeans-elbow.png) |
 |:-------------------------------------------------------------------------------------------:|
+
+| ![Image 1](https://github.com/user-attachments/assets/d9467630-1605-4b24-9a2c-b8b03dd0b391) | ![Image 2](https://github.com/user-attachments/assets/081ef6e3-0a8b-448b-bef9-82d086272a8b) 
+|:-------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------
 
 
 #### 6.2.2. Hiyerarşik Kümeleme
