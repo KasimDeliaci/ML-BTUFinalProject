@@ -408,7 +408,7 @@ Baseline Model Performansı:
 
 **Değerlendirme:**
 
-KNN Regresyon modeli, baseline modelden önemli ölçüde daha iyi performans göstermiştir. MSE ve RMSE değerleri baseline modele göre çok daha düşük, R^2 değeri ise çok daha yüksektir. Bu, KNN Regresyon modelinin ihracat maliyetlerini tahmin etmede daha başarılı olduğunu göstermektedir. Ayrıca Lineer ve Lasso'da yaşanılan overfitting probleminin önüne geçilerek daha genelleştirilebilir bir model elde edilmiştir.
+KNN Regresyon modeli, baseline modelden önemli ölçüde daha iyi performans göstermiştir. MSE ve RMSE değerleri baseline modele göre çok daha düşük, R^2 değeri ise çok daha yüksektir. Bu, KNN Regresyon modelinin ihracat maliyetlerini tahmin etmede daha başarılı olduğunu göstermektedir. Ayrıca Lineer ve Lasso'da yaşanılan overfitting probleminin önüne geçilerek daha genelleştirilebilir bir model elde edilmiştir. Ancak farklı algoritmalar ile R^2 skoru arttırılabilir, bunun için RandomForest uygun bir tercih olacaktır.
 
 **Modelin Optimizasyonu:**
 
@@ -418,9 +418,44 @@ KNN Regresyon modelinin performansını artırmak için, `n_neighbors` parametre
 
 KNN Regresyon modeli, ihracat maliyetlerini tahmin etmede baseline modelden çok daha başarılıdır ve verileri iyi bir şekilde açıklayabilir. Bu model, işletmelere ihracat maliyetlerini tahmin etme ve planlama konusunda yardımcı olabilir.
 
-#### 6.1.4. Random Forest Regresyonu
+### 6.1.4 Random Forest Regresyonu
 
-`train_evaluate_RandomForest_with_CV()` fonksiyonu kullanılarak Random Forest regresyonu modeli eğitilmiş ve değerlendirilmiştir.
+`train_evaluate_RandomForest_with_CV()` fonksiyonu kullanılarak Random Forest regresyonu modeli eğitilmiş ve değerlendirilmiştir. Bu fonksiyon, verilen eğitim ve test verilerini kullanarak bir Random Forest Regresyon modeli oluşturur, çapraz doğrulama ile optimize eder ve modelin performansını çeşitli metriklerle değerlendirir. Random Forest, birden çok karar ağacını bir araya getirerek daha güçlü ve genelleme yeteneği yüksek bir model oluşturan bir topluluk öğrenme (ensemble learning) yöntemidir.
+
+**Fonksiyonun Yapısı:**
+
+1. **Model Oluşturma:** `RandomForestRegressor()` sınıfından bir model nesnesi oluşturulur. `n_estimators`, `max_depth` gibi parametreler, modelin karmaşıklığını kontrol eder.
+2. **Çapraz Doğrulama:** `GridSearchCV()` fonksiyonu kullanılarak çapraz doğrulama yapılır ve modelin hiperparametreleri optimize edilir. Bu işlemde, veri seti 5 parçaya bölünür ve model her seferinde farklı bir parça üzerinde test edilerek en iyi hiperparametreler bulunur.
+3. **Model Eğitimi:** `fit()` metodu kullanılarak model, eğitim verileri ile eğitilir.
+4. **Tahmin Yapma:** `predict()` metodu kullanılarak test verileri üzerinde tahminler yapılır.
+5. **Performans Değerlendirmesi:** `mean_squared_error()`, `r2_score()` gibi metrikler kullanılarak modelin performansı değerlendirilir.
+6. **Baseline Model:** Modelin performansını karşılaştırmak için basit bir baseline model oluşturulur. Bu model, tüm tahminleri eğitim verilerinin ortalaması olarak yapar.
+
+**Sonuçlar:**
+
+Random Forest modelinin 5-kat çapraz doğrulama ile elde edilen ortalama performans metrikleri aşağıdaki gibidir:
+
+- Ortalama MSE: 4314539.5705
+- Ortalama RMSE: 2069.0952
+- Ortalama R²: 0.9887
+
+Baseline Model Performansı:
+
+- MSE: 394124347.6153
+- RMSE: 19852.5653
+- R²: 0.0000
+
+**Değerlendirme:**
+
+Random Forest modeli, baseline modelden önemli ölçüde daha iyi performans göstermiştir. MSE ve RMSE değerleri baseline modele göre çok daha düşük, R^2 değeri ise çok daha yüksektir. Bu, Random Forest modelinin ihracat maliyetlerini tahmin etmede daha başarılı olduğunu göstermektedir. KNN'e göre hem overfit problemş aşılmış hem de R^2 değeri yükseltilmiştir.
+
+**Çapraz Doğrulamanın Faydaları:**
+
+Çapraz doğrulama, modelin hiperparametrelerini optimize etmek ve modelin genelleme yeteneğini artırmak için kullanılır. Bu sayede, modelin test verileri üzerinde de iyi bir performans göstermesi sağlanır.
+
+**Sonuç:**
+
+Random Forest modeli, ihracat maliyetlerini tahmin etmede baseline modelden çok daha başarılıdır ve verileri iyi bir şekilde açıklayabilir. Bu model, işletmelere ihracat maliyetlerini tahmin etme ve planlama konusunda yardımcı olabilir.
 
 #### 6.1.5. XGBoost Regresyonu
 
