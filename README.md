@@ -5,7 +5,7 @@
 - [1. Proje Genel Bakış](#1-proje-genel-bakış)
 - [2. Özellikler](#2-özellikler)
 - [3. Gereksinimler](#3-gereksinimler)
-- [4. Proje Yapısı](#4-proje-yapısı)
+- [4. Projenin Akışı](#4-proje-yapısı)
 - [5. Veri Ön İşleme](#5-veri-ön-işleme)
 - [6. Modeller](#6-modeller)
     - [6.1. Denetimli (Supervised) Öğrenme (Regresyon)](#61-denetimli-supervised-öğrenme-regresyon)
@@ -117,18 +117,45 @@ Bu projeyi çalıştırmak için aşağıdaki gereksinimler vardır:
 - Matplotlib
 - Seaborn
 
-## 4. Proje Yapısı
+## 4. Projenin Akışı
 
-Proje aşağıdaki dosya ve dizinlerden oluşmaktadır:
+Bu projede izlenen adımlar genel olarak aşağıdaki gibidir:
 
-- `data/`: Veri setlerinin bulunduğu dizin.
-- `notebooks/`: Jupyter Notebook dosyalarının bulunduğu dizin.
-- `scripts/`: Python script dosyalarının bulunduğu dizin.
-- `models/`: Eğitilmiş modellerin kaydedildiği dizin.
-- `results/`: Sonuçların ve görsellerin kaydedildiği dizin.
-- `README.md`: Proje hakkında bilgi veren dosya.
+1.  **Veri Yükleme:** `kasim_df.csv` dosyası Pandas kütüphanesi kullanılarak yüklenir. (`pd.read_csv('kasim_df.csv')`)
 
-**Not:** Projenizin gerçek dosya ve dizin yapısına göre bu bölümü düzenlemeniz gerekebilir.
+2.  **Veri İnceleme ve Temizleme:**
+    -   `check_df()` fonksiyonu ile verinin genel özellikleri (boyut, veri tipleri, eksik değerler, vb.) incelenir.
+    -   `delete_columns_with_high_missing_ratio()` fonksiyonu ile eksik değer oranı yüksek olan sütunlar silinir.
+    -   Kategorik değişkenlerdeki eksik değerler mod ile doldurulur.
+    -   `check_zero_ratio()` fonksiyonu ile sıfır değerlerinin oranı analiz edilir ve belirli bir oranın üzerinde sıfır değeri içeren sütunlar silinir.
+
+3.  **Değişken Tanımlama:**
+    -   `identify_columns()` fonksiyonu ile kategorik, numerik ve kardinal değişkenler tanımlanır.
+
+4.  **Görselleştirme:**
+    -   `plot_histogram_scatter()` fonksiyonu ile numerik değişkenlerin histogram ve scatter plotları çizdirilir.
+    -   `plot_categorical_distributions()` fonksiyonu ile kategorik değişkenlerin dağılımları görselleştirilir.
+
+5.  **Aykırı Değer Analizi:**
+    -   `handle_outliers()` fonksiyonu ile aykırı değerler tespit edilir ve sınırlandırma (capping) yöntemi ile işlenir.
+
+6.  **Özellik Mühendisliği:**
+    -   Toplam maliyet, paket başına maliyet, paket başına ağırlık gibi yeni özellikler oluşturulur.
+
+7.  **Hedef Değişkene Göre Kodlama:**
+    -   `target_encode()` fonksiyonu ile kategorik değişkenler hedef değişkene göre ortalama kodlama yöntemi ile sayısal değerlere dönüştürülür.
+
+8.  **Korelasyon Analizi ve Özellik Seçimi:**
+    -   `correlation_heatmap()` fonksiyonu ile değişkenler arasındaki korelasyon görselleştirilir.
+    -   `drop_correlated_features()` fonksiyonu ile yüksek korelasyona sahip değişkenler veri setinden çıkarılır.
+
+9.  **Özellik Ölçeklendirme:**
+    -   `StandardScaler()` kullanılarak özellikler standartlaştırılır.
+
+10.  **Modelleme:**
+    -   Denetimli öğrenme (regresyon) için `train_evaluate_linearRegression()`, `train_evaluate_LassoRegression()`, `train_evaluate_KNNRegressor()`, `train_evaluate_RandomForest_with_CV()`, `train_evaluate_XGBoost()` fonksiyonları kullanılarak farklı modeller eğitilir ve değerlendirilir.
+    -   Denetimsiz öğrenme (anomali tespiti) için `train_evaluate_KMeans()`, `train_evaluate_HierarchicalKMeans()`, `train_evaluate_IsolationForest()` fonksiyonları kullanılarak farklı modeller eğitilir ve değerlendirilir.
+
 
 ## 5. Veri Ön İşleme
 
